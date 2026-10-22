@@ -4,7 +4,7 @@ In order to refine my RTL \& testbench writing skills, I will be working through
 
 I will hold myself to completing this without the use of any AI tools.
 
-\* The Questions Are: \*
+## The Questions Are: 
 
 - [ ] 1: RTL for a fixed priority arbiter with decreasing priority from LSB to MSB.
 
