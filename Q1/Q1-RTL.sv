@@ -1,7 +1,5 @@
 // Question 1: write a fixed priority arbiter with decreasing priority from LSB to MSB
 
-// Question 1: write a fixed priority arbiter with decreasing priority from LSB to MSB
-
 module Q1 #(
     parameter int N = 8
 )(
