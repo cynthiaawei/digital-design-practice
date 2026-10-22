@@ -4,12 +4,14 @@ In order to refine my RTL \& testbench writing skills, I will be working through
 
 I will hold myself to completing this without the use of any AI tools.
 
-The Questions Are; 
+\* The Questions Are: \*
+
 - [ ] 1: RTL for a fixed priority arbiter with decreasing priority from LSB to MSB.
 
 - [ ] 2: RTL for a fixed priority arbiter with decreasing priority from MSB to LSB.
 
 - [ ] 3: Implement a Round-Robin Arbiter with 3 I/p requests.
+
 - [ ] 4: RTL Design synchronous FIFO buffer for generic depth.
 - [ ] 5: Improve FIFO for high speed - registered flags, registered read (what additional logic will be needed to make sure we can still write and read to same address in consecutive cycles)
 - [ ] 6: Micro-architect Reorder-buffer (ROB) and write RTL for it. 
