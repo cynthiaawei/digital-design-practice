@@ -27,14 +27,26 @@ module Q3_tb;
 	end
   
   	initial begin
-      	#80;
+     	rst_n_tb = '1;
+      	#50;
       	rst_n_tb = '0;
+      	#10;
+      	rst_n_tb = '1;
     end
 
   	initial begin
-	    $dumpfile("dump.vcd"); $dumpvars;
-        rst_n_tb = '1;
-     	req_tb = 3'b110;
-      
+     	req_tb = 3'b111;
+      	#20;
+   	    req_tb = 3'b110;
+      	#20;
+        req_tb = 3'b010;
+      	#10;
+        req_tb = 3'b011;
+      	#20;
+        req_tb = 3'b101;
+    end
+  
+  	initial begin
+      	$dumpfile("dump.vcd"); $dumpvars;
     end
 endmodule
