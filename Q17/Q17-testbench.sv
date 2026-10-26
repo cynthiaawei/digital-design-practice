@@ -2,7 +2,7 @@
 
 `timescale 1ns/1ps  // Defines <time unit>/<time precision>
 
-module Q17;
+module Q17_tb;
   	parameter int 			N_tb = 3;
     logic 					ick_tb;
     logic 					rst_n_tb;
