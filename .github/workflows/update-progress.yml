@@ -1,0 +1,66 @@
+name: Update README Progress
+
+on:
+  push:
+    paths:
+      - "README.md"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-progress:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Calculate and update progress
+        run: |
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+
+          path = Path("README.md")
+          content = path.read_text(encoding="utf-8")
+
+          # Count checked and unchecked questions
+          completed = len(re.findall(r"(?im)^-\s*\[x\]\s+\d+:", content))
+          total = len(re.findall(r"(?im)^-\s*\[[ x]\]\s+\d+:", content))
+
+          percentage = round(completed / total * 100) if total else 0
+
+          # Generate a 20-block progress bar
+          filled = round(completed / total * 20) if total else 0
+          bar = "🟩" * filled + "⬜" * (20 - filled)
+
+          progress = (
+              f"<!-- PROGRESS_START -->\n"
+              f"**{completed} / {total} completed ({percentage}%)**\n\n"
+              f"{bar} {percentage}%\n"
+              f"<!-- PROGRESS_END -->"
+          )
+
+          content = re.sub(
+              r"<!-- PROGRESS_START -->.*?<!-- PROGRESS_END -->",
+              lambda match: progress,
+              content,
+              flags=re.DOTALL
+          )
+
+          path.write_text(content, encoding="utf-8")
+          PY
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add README.md
+
+          if ! git diff --cached --quiet; then
+            git commit -m "Automatically update RTL practice progress"
+            git push
+          fi
