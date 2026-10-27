@@ -18,7 +18,7 @@ I will hold myself to completing this without the use of any AI tools.
 - [X] 7: RTL and circuit for a pulse synchronization circuit.
 - [ ] 8: FSM design of a divisible 3 ( or 5) logic for serial input. Assume input goes to the LSB of the previously seen number.
 - [ ] 9: Asynchronous FIFO implementation details.
-- [ ] 10: RTL for binary to gray and gray to binary logic.
+- [X] 10: RTL for binary to gray and gray to binary logic.
 - [ ] 11: Implement NAND, XOR, and NOT gate using 2-to-1 MUX.
 - [ ] 12: Implement 4-to-1 MUX using 2-to-1 MUXs.
 - [ ] 13: RTL Design for an LRU cache replacement policy, consider a 4-way cache.
