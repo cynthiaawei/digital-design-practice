@@ -15,7 +15,7 @@ I will hold myself to completing this without the use of any AI tools.
 - [ ] 4: RTL Design synchronous FIFO buffer for generic depth.
 - [ ] 5: Improve FIFO for high speed - registered flags, registered read (what additional logic will be needed to make sure we can still write and read to same address in consecutive cycles)
 - [ ] 6: Micro-architect Reorder-buffer (ROB) and write RTL for it. 
-- [ ] 7: RTL and circuit for a pulse synchronization circuit.
+- [X] 7: RTL and circuit for a pulse synchronization circuit.
 - [ ] 8: FSM design of a divisible 3 ( or 5) logic for serial input. Assume input goes to the LSB of the previously seen number.
 - [ ] 9: Asynchronous FIFO implementation details.
 - [ ] 10: RTL for binary to gray and gray to binary logic.
