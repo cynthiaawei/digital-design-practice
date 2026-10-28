@@ -28,7 +28,7 @@ I will hold myself to completing this without the use of any AI tools.
 - [x] 12: Implement 4-to-1 MUX using 2-to-1 MUXs.
 - [ ] 13: RTL Design for an LRU cache replacement policy, consider a 4-way cache.
 - [x] 14: RTL for a 3-input sorting logic.
-- [ ] 15: RTL for three input Median circuit.
+- [x] 15: RTL for three input Median circuit.
 - [ ] 16: RTL for Fibonacci and Factorial algorithm.
 - [x] 17: Design clock divider logic for divide by 2,3,4,5.
 - [ ] 18: RTL ready-valid downsizer. 16-bit input with ready/valid gets sent at output 1-byte at a time. Both I/p and O/P use ready/valid.
