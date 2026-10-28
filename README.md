@@ -18,7 +18,7 @@ I will hold myself to completing this without the use of any AI tools.
 - [x] 2: Fixed priority arbiter with decreasing priority from MSB to LSB.
 - [x] 3: Round-Robin Arbiter with 3 I/p requests.
 - [x] 4: RTL Design synchronous FIFO buffer for generic depth.
-- [ ] 5: Improve FIFO for high speed - registered flags, registered read (what additional logic will be needed to make sure we can still write and read to same address in consecutive cycles)
+- [x] 5: Improve FIFO for high speed - registered flags, registered read (what additional logic will be needed to make sure we can still write and read to same address in consecutive cycles)
 - [ ] 6: Micro-architect Reorder-buffer (ROB) and write RTL for it.
 - [x] 7: RTL and circuit for a pulse synchronization circuit.
 - [ ] 8: FSM design of a divisible 3 (or 5) logic for serial input. Assume input goes to the LSB of the previously seen number.
