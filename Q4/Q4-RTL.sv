@@ -6,39 +6,42 @@ module Q4 #(
 )(
   input logic clk,
   input logic rst_n,
-  input logic [WIDTH-1:0] write_input,
-  output logic [WIDTH-1:0] read_output,
+  input logic [WIDTH-1:0] wr_data,
+  output logic [WIDTH-1:0] rd_data,
   input logic wr_en,
-  input logic rw_en
+  input logic rd_en
 );
-  logic [WIDTH-1:0] FIFO [DEPTH-1:0]; // unpacked array (access horizontally)
-  logic [$clog2(DEPTH)-1:0] read_ptr, write_ptr; // eg. depth = 0, these are [3-1:0]
-  logic full, empty, read_success, write_success, bypass;
-  logic [$clog2(DEPTH+1)-1:0] count; // COUNTER NEEDS TO BE 1 BIT BIGGER THAN FIFO SIZE (EXTRA BIT FOR EMPTY)
   
-  // SET FULL & EMPTY AND ARRAY DEFAULT
-  assign full = (count == DEPTH);
-  assign empty = (count == '0);
   
-  assign bypass = (read_ptr==write_ptr) & rw_en & wr_en;
-  assign write_success = bypass || (wr_en & ~full);
-  assign read_success = bypass || (rw_en & ~empty);
+  localparam int DEPTH_PTR_WIDTH = (DEPTH > 1) ? $clog2(DEPTH) : 1; // referenced chatgpt > need to account if FIFO size = 1
+  
+  logic [WIDTH-1:0] FIFO [DEPTH-1:0]; 
+  
+  logic [DEPTH_PTR_WIDTH-1:0] rd_ptr, wr_ptr; 
+  
+  logic full, empty;
+  
+  logic [$clog2(DEPTH+1)-1:0] count; // referenced chatgpt > COUNTER NEEDS TO SHOW OCCUPANCY FROM 0 TO DEPTH
+  
+ 
+  
+  // full & empty conditions
+  always_comb begin
+    full = (count == DEPTH);
+    empty = (count == '0);
+  end
   
   
   // WRITE FF
   always_ff @(posedge clk or negedge rst_n) begin
       if(~rst_n)begin
-          write_ptr <= '0;
+          wr_ptr <= '0;
       end else begin
-          if (wr_en) begin
-              if((write_ptr == read_ptr) & rw_en & empty) begin // write-through logic
-                    write_ptr <= write_ptr;
-              end else if (~full || (full & rw_en)) begin // normal logic OR rw & wr when full logic
-                    FIFO[write_ptr] <= write_input;
-                    write_ptr <= write_ptr == DEPTH-1 ? '0 : write_ptr + 1'b1; // pointer wrap around logic
-              end 
+        if (wr_en & ~full) begin
+          	  FIFO[wr_ptr] <= wr_data;
+              wr_ptr <= wr_ptr == DEPTH-1 ? '0 : wr_ptr + 1'b1; // pointer wrap around logic 
           end else begin
-              write_ptr <= write_ptr;
+              wr_ptr <= wr_ptr;
           end
       end	
   end
@@ -47,18 +50,14 @@ module Q4 #(
   // READ FF       
   always_ff @(posedge clk or negedge rst_n) begin
       if(~rst_n)begin
-         read_ptr <= '0;
+         rd_ptr <= '0;
+         rd_data <= '0;
       end else begin
-         if (rw_en) begin
-           if((write_ptr == read_ptr) & wr_en & empty) begin // write through logic
-             	read_output <= write_input;
-             	read_ptr <= read_ptr;
-           end else if (~empty) begin
-             	read_output <= FIFO[read_ptr];
-             	read_ptr <= read_ptr == DEPTH-1 ? '0 : read_ptr + 1'b1;
-           end
+        if (rd_en & ~empty) begin
+           rd_data <= FIFO[rd_ptr];
+           rd_ptr <= rd_ptr == DEPTH-1 ? '0 : rd_ptr + 1'b1;
          end else begin
-           read_ptr <= read_ptr;
+           rd_ptr <= rd_ptr;
          end
       end
   end
@@ -68,9 +67,9 @@ module Q4 #(
     if(~rst_n)begin
       	count <= '0;
     end else begin
-      case({write_success,read_success})
-        2'b10: count <= count + 1;
-        2'b01: count <= count - 1;
+      case({rd_en & ~empty,wr_en & ~full})
+        2'b10: count <= count - 1;
+        2'b01: count <= count + 1;
         default: count <= count;
        endcase
     end

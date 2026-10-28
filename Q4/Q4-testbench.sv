@@ -7,10 +7,10 @@ module Q4_tb;
   	parameter int			WIDTH_tb = 2;
     logic 					clk_tb;
     logic 					rst_n_tb;
-    logic [WIDTH_tb-1:0] 	write_input_tb; 
-    logic [WIDTH_tb-1:0] 	read_output_tb;
+  logic [WIDTH_tb-1:0] 	wr_data_tb; 
+  logic [WIDTH_tb-1:0] 	rd_data_tb;
   	logic					wr_en_tb;
-  	logic					rw_en_tb;
+  	logic					rd_en_tb;
 	
   	// instantiate instance with name test
   	Q4 #(
@@ -19,10 +19,10 @@ module Q4_tb;
   	) test ( 
    			    .clk(clk_tb),
      		    .rst_n(rst_n_tb),
-            	.write_input(write_input_tb),
-                .read_output(read_output_tb),
+            	.wr_data(wr_data_tb),
+                .rd_data(rd_data_tb),
                 .wr_en(wr_en_tb),
-                .rw_en(rw_en_tb)
+      .rd_en(rd_en_tb)
     );
 
     initial begin						// Generate a Clock
@@ -47,26 +47,26 @@ module Q4_tb;
 
   	initial begin
       	wr_en_tb = '1;
-     	write_input_tb = 2'b11;
-      	rw_en_tb = '1;
+     	wr_data_tb = 2'b11;
+      	rd_en_tb = '1;
       	#20
       	//wr_en_tb = '0;
-      	write_input_tb = 2'b10;
+      	wr_data_tb = 2'b10;
       	#20
-      	rw_en_tb = '0;
-        write_input_tb = 2'b10;
+      	rd_en_tb = '0;
+        wr_data_tb = 2'b10;
       	#10
       	//rw_en_tb = '0;
-        write_input_tb = 2'b00;
+        wr_data_tb = 2'b00;
      	#20
-      	write_input_tb = 2'b01;
+      	wr_data_tb = 2'b01;
       	#10
-      	write_input_tb = 2'b11;
+      	wr_data_tb = 2'b11;
       	#10
-      	write_input_tb = 2'b01;
+      	wr_data_tb = 2'b01;
       	#10
       	wr_en_tb = '0;
-      	rw_en_tb = '1;
+      	rd_en_tb = '1;
     end
   
   	initial begin
