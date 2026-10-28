@@ -1,4 +1,4 @@
-// Question 5: Improve FIFO for high speed - registered flags, registered read (what additional logic will be needed to make sure we can still write and read to same address in consecutive cycles)
+// Question 5: Improve FIFO for high speed - registered flags, registered read (what additional logic will be needed to make sure we can still write and read to same address in consecutive cycles).
 
 module Q5 #(
   parameter int DEPTH = 8,
