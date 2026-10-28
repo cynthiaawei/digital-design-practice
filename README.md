@@ -33,7 +33,7 @@ I will hold myself to completing this without the use of any AI tools.
 - [x] 17: Design clock divider logic for divide by 2,3,4,5.
 - [ ] 18: RTL ready-valid downsizer. 16-bit input with ready/valid gets sent at output 1-byte at a time. Both I/p and O/P use ready/valid.
 - [ ] 19: Datapath components for a typical 4/5 stage CPU pipeline.
-- [ ] 20: 11011 sequence detector FSM.
+- [x] 20: 11011 sequence detector FSM.
 - [x] 21: RTL for a) the index of the first set bit in 32-bit input. b) Number of 1's in 32-bit input signal.
 - [ ] 22: Grayscale (average) conversion circuit without using division hardware. (inputs are 8-bit wide for the three channels)
 - [x] 23: Clock divide by 10 with a duty cycle of 40.
