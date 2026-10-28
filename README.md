@@ -7,9 +7,9 @@ I will hold myself to completing this without the use of any AI tools.
 ## Progress
 
 <!-- PROGRESS_START -->
-**13 / 25 completed (52%)**
+**14 / 25 completed (56%)**
 
-🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ 52%
+🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜ 56%
 <!-- PROGRESS_END -->
 
 ## Questions
