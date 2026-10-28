@@ -25,7 +25,7 @@ I will hold myself to completing this without the use of any AI tools.
 - [ ] 9: Asynchronous FIFO implementation details.
 - [x] 10: RTL for binary to gray and gray to binary logic.
 - [x] 11: Implement NAND, XOR, and NOT gate using 2-to-1 MUX.
-- [ ] 12: Implement 4-to-1 MUX using 2-to-1 MUXs.
+- [x] 12: Implement 4-to-1 MUX using 2-to-1 MUXs.
 - [ ] 13: RTL Design for an LRU cache replacement policy, consider a 4-way cache.
 - [ ] 14: RTL for a 3-input sorting logic.
 - [ ] 15: RTL for three input Median circuit.
