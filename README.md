@@ -22,7 +22,7 @@ I will hold myself to completing this without the use of any AI tools.
 - [ ] 6: Micro-architect Reorder-buffer (ROB) and write RTL for it.
 - [x] 7: RTL and circuit for a pulse synchronization circuit.
 - [ ] 8: FSM design of a divisible 3 (or 5) logic for serial input. Assume input goes to the LSB of the previously seen number.
-- [ ] 9: Asynchronous FIFO implementation details.
+- [x] 9: Asynchronous FIFO implementation details.
 - [x] 10: RTL for binary to gray and gray to binary logic.
 - [x] 11: Implement NAND, XOR, and NOT gate using 2-to-1 MUX.
 - [x] 12: Implement 4-to-1 MUX using 2-to-1 MUXs.
