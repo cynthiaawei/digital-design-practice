@@ -21,15 +21,15 @@ I will hold myself to completing this without the use of any AI tools.
 - [x] 5: Improve FIFO for high speed - registered flags, registered read (what additional logic will be needed to make sure we can still write and read to same address in consecutive cycles)
 - [ ] 6: Micro-architect Reorder-buffer (ROB) and write RTL for it.
 - [x] 7: RTL and circuit for a pulse synchronization circuit.
-- [ ] 8: FSM design of a divisible 3 (or 5) logic for serial input. Assume input goes to the LSB of the previously seen number.
+- [x] 8: FSM design of a divisible 3 (or 5) logic for serial input. Assume input goes to the LSB of the previously seen number.
 - [x] 9: Asynchronous FIFO implementation details.
 - [x] 10: RTL for binary to gray and gray to binary logic.
 - [x] 11: Implement NAND, XOR, and NOT gate using 2-to-1 MUX.
 - [x] 12: Implement 4-to-1 MUX using 2-to-1 MUXs.
-- [ ] 13: RTL Design for an LRU cache replacement policy, consider a 4-way cache.
+- [x] 13: RTL Design for an LRU cache replacement policy, consider a 4-way cache.
 - [x] 14: RTL for a 3-input sorting logic.
 - [x] 15: RTL for three input Median circuit.
-- [ ] 16: RTL for Fibonacci and Factorial algorithm.
+- [x] 16: RTL for Fibonacci and Factorial algorithm.
 - [x] 17: Design clock divider logic for divide by 2,3,4,5.
 - [x] 18: RTL ready-valid downsizer. 16-bit input with ready/valid gets sent at output 1-byte at a time. Both I/p and O/P use ready/valid.
 - [ ] 19: Datapath components for a typical 4/5 stage CPU pipeline.
