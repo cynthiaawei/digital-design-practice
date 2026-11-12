@@ -35,7 +35,7 @@ I will hold myself to completing this without the use of any AI tools.
 - [ ] 19: Datapath components for a typical 4/5 stage CPU pipeline.
 - [x] 20: 11011 sequence detector FSM.
 - [x] 21: RTL for a) the index of the first set bit in 32-bit input. b) Number of 1's in 32-bit input signal.
-- [ ] 22: Grayscale (average) conversion circuit without using division hardware. (inputs are 8-bit wide for the three channels)
+- [x] 22: Grayscale (average) conversion circuit without using division hardware. (inputs are 8-bit wide for the three channels)
 - [x] 23: Clock divide by 10 with a duty cycle of 40.
 - [ ] 24: SVAs for synchronous FIFO – as many as possible.
 - [ ] 25: Using UART timing diagram, implement RTL for TX interface.
